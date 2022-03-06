@@ -1,9 +1,16 @@
 # Manul
 
-Hi! Meet manul - an ASCII-image converter.
+Hi! Meet manul - an ASCII-image converter. \
 Convert any image you like to it's ASCII representation.
 
-## Instruction
+## Installation 
+```bash
+git clone https://github.com/ALittleRunaway/manul.git
+cd manul
+go install manul # make sure your $GOPATH variable is in $PATH
+```
+
+## Instructions
 
 ```bash
 Manul is a CLI tool for converting your images to ASCII-symbols.
