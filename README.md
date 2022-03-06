@@ -28,15 +28,13 @@ Flags:
 
 ### Some examples
 
-Original Joker             |  ASCII-Joker
-:-------------------------:|:-------------------------:
-<img width="760" alt="image" src="https://user-images.githubusercontent.com/66780462/156937158-65d75a12-3fcb-4ad1-b7e1-b55febe01f35.png"> | <img width="1470" alt="image" src="https://user-images.githubusercontent.com/66780462/156936519-4c5bbdfc-df3c-482c-a2d4-2a70f832bc9c.png">
-Original Manul            |  ASCII-Manul
-<img alt="image" src="https://user-images.githubusercontent.com/66780462/156936584-01783915-9982-44b8-99b5-718b19810936.png"> | <img width="1470" alt="image" src="https://user-images.githubusercontent.com/66780462/156936546-d880b444-90ac-4d43-9579-c0777adf640d.png">
-Original Legendary Album            |  ASCII-Legendary Album
-<img alt="image" src="https://user-images.githubusercontent.com/66780462/156936564-84647d59-6d4b-4e6e-8ae4-a8d864984c93.png"> | <img width="1470" alt="image" src="https://user-images.githubusercontent.com/66780462/156936531-d45988e9-80d4-491e-94ad-ed733439a052.png">
-
-
+|                                                              Original Joker                                                               |                                                                ASCII-Joker                                                                 |
+|:-----------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------:|
+| <img width="760" alt="image" src="https://user-images.githubusercontent.com/66780462/156937158-65d75a12-3fcb-4ad1-b7e1-b55febe01f35.png"> | <img width="1470" alt="image" src="https://user-images.githubusercontent.com/66780462/156936519-4c5bbdfc-df3c-482c-a2d4-2a70f832bc9c.png"> |
+|                                                              Original Manul                                                               |                                                                ASCII-Manul                                                                 |
+|       <img alt="image" src="https://user-images.githubusercontent.com/66780462/156936584-01783915-9982-44b8-99b5-718b19810936.png">       | <img width="1470" alt="image" src="https://user-images.githubusercontent.com/66780462/156936546-d880b444-90ac-4d43-9579-c0777adf640d.png"> |
+|                                                         Original Legendary Album                                                          |                                                           ASCII-Legendary Album                                                            |
+|       <img alt="image" src="https://user-images.githubusercontent.com/66780462/156936564-84647d59-6d4b-4e6e-8ae4-a8d864984c93.png">       | <img width="1470" alt="image" src="https://user-images.githubusercontent.com/66780462/156936531-d45988e9-80d4-491e-94ad-ed733439a052.png"> |
 
 ### An ASCII-Manul
 

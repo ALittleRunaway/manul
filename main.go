@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "manul/cmd"
+import "github.com/ALittleRunaway/manul/cmd"
 
 func main() {
 	cmd.Execute()
