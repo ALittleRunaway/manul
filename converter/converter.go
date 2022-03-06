@@ -86,6 +86,11 @@ func initConfig(inputFile string) converterConfig {
 	} else {
 		asciiArray = ascii
 	}
+	if conf.width == 0 && conf.height == 0 {
+		conf.width = 300
+	} else if conf.width != 0 && conf.height != 0 {
+		conf.height = 0
+	}
 	return conf
 }
 
@@ -98,11 +103,6 @@ func getImageData(cfg converterConfig) (customImage, error) {
 	imageData, _, err := image.Decode(existingImageFile)
 	if err != nil {
 		return customImage{}, err
-	}
-	if cfg.width == 0 && cfg.height == 0 {
-		cfg.width = 300
-	} else if cfg.width != 0 && cfg.height != 0 {
-		cfg.height = 0
 	}
 	imageToConvert := resize.Resize(cfg.width, cfg.height, imageData, resize.Lanczos3)
 	existingImageFile.Seek(0, 0)

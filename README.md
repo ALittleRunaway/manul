@@ -1,56 +1,66 @@
 # Manul
 
-An ASCII image converter
+Hi! Meet manul - an ASCII-image converter.
+Convert any image you like to it's ASCII representation.
 
+### Manual
+
+```bash
+Manul is a CLI tool for converting your images to ASCII-symbols.
+Supported image formats: PNG, JPG, GPEG.
+
+Usage:
+  manul [options...] <filename> [flags]
+
+Examples:
+    manul myimage.png
+    manul -w 50 -o ~/myimageascii.txt myimage.png
+    manul -i -n 100 myimage.png
+
+Flags:
+    -n, --height int          Height in pixels. Default is 200. If both width and height are provided, height is ignored
+    -h, --help                help for manul
+    -i, --invert              Invert image colors
+    -o, --outputFile string   Output file name. Default is 'ascii.txt' (default "ascii.txt")
+    -v, --version             version for manul
+    -w, --width int           Width in pixels. Default is 300. If both width and height are provided, height is ignored
 ```
 
+### Some examples
 
-@@@@&&&&&&&&&&&&&&XXXXXXxx;;;;;;;;;;;;;;xxxxXXxxxxXX&&&&XXXXXXXXXXxx&&XXXX&&&&&&XXxxxxXXXX&&&&XXXX&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&@@@@
-@@&&&&&&&&&&&&&&&&&&&&XXxxXXxx;;;;xx;;;;;;xxxx;;xxxx&&&&XXxxXXxxxxXX@@&&XXXXXXXXXXxxxxXX&&&&&&xxxxXX&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&@@
-@@@@@@@@&&&&&&&&&&&&XXxxxxxx;;;;;;;;::::;;;;;;;;xxxxXXXXXXXX&&@@&&XX&&&&XX&&XXXXXX&&xxxxxxXX&&&&XXXXXXXX&&&&&&&&&&&&&&&&&&&&&&&&&&@@@@&&&&&&
-@@@@@@@@@@&&&&&&&&&&XXxxxx;;::::::::::::::;;xxxxXXXX&&XX&&&&XX@@@@@@&&&&XXXXXX&&&&&&XXxxXXXXXX&&XXXXXX&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-@@@@@@@@@@@@&&&&&&&&XX;;::::,,,,,,,,::::::;;;;xxXXXX&&&&@@XXXXxxXXXXXX&&&&xx&&&&&&&&@@XXXXXXXXXXXX&&XXXXXXXXXXXXXXXXXXXX&&&&XX&&&&&&&&&&&&&&
-@@@@@@@@@@@@&&&&&&&&XXxx;;::;;::::::,,::::;;xxxxXX&&XXXXXXxxxxxx;;xxXX&&&&;;xx&&&&&&@@XX&&XXXXXXXXXXXX&&XXXX&&XX&&XXxxxxxxxxxxXXXXXX&&XX&&&&
-@@@@@@@@@@@@&&&&&&&&XXXX;;;;::::::::::::;;xxxxXXXXXXXX;;xxxx;;xxxx;;XX&&@@xxxxxxXXXXXXXX&&&&xxXXXXXXxxXXxxXXxxxx;;xxxxxxXXXXXXXXXXxxXX&&&&&&
-@@@@@@@@&&&&&&&&&&&&XXxx;;;;::,,::::;;xxxxxxxxxxXXxxxxxx&&&&xx@@&&;;;;&&&&xx;;;;xx::xxxx&&XXxx&&xxxx;;xxxxxxxxxxxxXXXX&&XXXXXXXXxxxxXX&&&&&&
-@@@@&&&&&&&&&&&&&&&&XXXXxx;;::::::;;xxxxxxXXXXxx;;xxxx&&XXxxXX@@@@xx;;XXxx;;xxxx;;;;xxxx&&XX&&XXXXxxxxxx;;XX&&xxXXXXXXXX;;;;xxxx;;;;xxXX&&&&
-@@&&&&&&&&&&&&&&&&&&XXXXxx;;;;::;;xxxxXXXXxxxxxxxx;;xxxx;;;;xxxx@@xx;;XX;;;;@@@@xxxx&&&&xxxxXXXXXXXXxxxxxxXXxxxxxxxxxxxx;;;;xxxxxx;;xxXX&&&&
-@@&&&&&&&&&&&&&&&&XXXXxx;;::::::;;xxxxXXXXxxXX&&&&XX;;,,::;;;;;;;;xx&&@@xxxx@@&&xxxx&&&&XXxxxxXXXXXXXXxxxxxxxxxx;;;;;;;;;;;;::::::;;xxXX&&&&
-@@&&&&XXXXXX&&&&&&XX;;;;::,,,,::;;xxxxxxxxxxXXxxXXXXxx,,::;;::;;;;xx&&@@XX;;xxxx;;xxxx&&XXxxxxxxXXXXXXxxxxxx;;;;xx;;;;;;;;;;::::::;;xxXX&&&&
-@@&&&&XXXXXX&&&&&&XXxxxx;;::::;;xxxxxxxxxxXX;;,,;;&&&&,,::::;;XXXX;;xxXX;;::;;;;;;;;::;;xx;;;;;;xxXXxxXXXX;;;;;;;;;;;;::;;xxXXXXxx;;xxXX&&XX
-@@&&&&XXXXXX&&&&XXXXxx;;::::;;::xxXXXXxxXXXX;;;;::::;;::::::;;xxxx;;XXxxxx;;xxxx;;::,,xx&&XXxx;;;;xxXXXXXXxx;;;;;;::;;;;;;::;;&&&&XXxxXXXXXX
-@@&&&&XXXX&&&&&&XXxxxx;;xxxxxx;;xxXXXXXXXXXX&&&&XXxx;;::;;;;;;;;;;xx&&xxxxxxXX;;::::xx@@@@@@@@XXxxxxXXXXXXxx;;;;;;::::;;xxxxxxxxxxXXxxXXXXXX
-@@&&&&&&&&&&&&&&&&XXxxxxxxxxxx;;xxXXXXXXXXXXXXxx;;&&XXXXxxxx&&xxxxxxXXXXxx;;xx;;;;;;xxXX&&xxxxXX&&XXxxXXXXXXXX;;;;;;;;;;xx;;;;xxxxXX&&XXXXXX
-@@&&&&&&&&&&&&@@&&XXxxxxXXXXXXxxXX&&XXXX@@xx;;xx;;@@&&;;&&xxXX&&xxXX&&XXXXXXXXxxxx::;;;;::::::;;XX&&XXXXXXXXXXxx::::;;;;xxxxxxXXXXXXXXXXXXXX
-@@@@&&&&&&&&&&&&&&&&XXXX&&@@&&&&XXXX&&&&&&;;::&&;;;;;;;;&&XX;;&&XXXX&&&&&&@@&&xxXXXXXXxxXXXXXXxxxx&&XXXXXXXXXXxx;;::::xxXXXXXXXXXXXXXXXXXXXX
-@@@@@@@@@@@@@@&&@@@@&&XX&&@@@@XX&&xx;;;;xxXX,,::XXxxxxXX@@&&;;XXXXXXXXXX&&XXxx&&@@XX@@@@XXXX@@&&xxXXXXXX&&XXXXXXxx;;::;;XX&&&&&&XXXXXXXXXXXX
-@@@@@@@@@@@@@@&&@@&&&&XX&&@@@@@@&&;;::::::XXxx,,,,;;XX&&@@XX::xxxxXXXXxxXX;;xx@@&&xx&&XX;;xx&&XXXXXXXXXX&&XXXXxxxxxx;;::;;XXXX&&&&XXXXXXXXXX
-@@@@@@@@@@@@@@&&@@&&XXXX&&&&&&&&xx,,::;;xxxxXX&&xx....,,,,;;;;;;;;xxxxxx;;::&&@@@@xxxx;;xx&&xx::&&&&XXXX&&XXXXXXxx;;;;;;;;XX&&@@&&&&XXXXXXXX
-@@@@@@@@@@@@@@&&XXXXXXXX@@@@XX;;::,,,,;;&&&&XXXX&&XX;;,,,,;;;;;;;;xxxx;;;;;;XX&&&&&&XXXXXX;;,,;;&&&&&&XXXXXXXXXXxxxx;;;;;;XX&&@@&&XXXXXXXX&&
-@@@@@@@@@@@@@@@@XXxxXXXXXXXXxx::,,,,::xxxxXXXX&&&&&&XXxxxxXXxx;;;;;;;;;;;;xx;;....,,,,,,,,,,xxxxXX&&&&XXXXXXXXxxxxxx;;::;;XX&&&&XXXXxxXXXX&&
-@@@@@@@@@@@@@@&&&&XXxxXXXXxx::::::;;XXxx::;;XX&&&&xx;;xxxxXX;;;;::;;;;;;xxXX;;,,::,,::xxXX&&XXxxxxXX&&&&&&&&XXXXxxxxXXxx::xx&&&&XXxxxxXXXX&&
-@@@@@@@@@@@@@@@@&&XXxx;;;;;;;;;;xxXXXX;;::::;;xx;;;;XXxxXXXX;;;;,,::::;;xxXXXXxxXX&&&&&&XXXXxxxxxx;;xxXXXX&&&&XXXXXXxxxxxxxxXXXXXXxxxxXXXX&&
-@@@@@@@@@@@@@@@@XXxxxxxxxx;;::;;xx;;;;::;;xx;;::;;xxxx::xxXX;;::::,,;;xxxxXXXXXXxxXX&&&&&&@@@@xx;;::;;xxXXXX&&&&&&&&&&XXxxxxxxXXXXXXXXxxXXXX
-@@@@@@@@@@@@@@@@XXxxxxxxxxxxxxXX&&XX;;::::;;::::xxXX::..,,::::::;;::::XX&&XXxxXXXXxxXX&&XXXXxxXXXX;;;;;;xx&&&&&&@@&&&&&&XXXXxxxxXXXXXXXXXXXX
-@@@@@@@@@@@@@@&&xxxx;;;;xxXXxxxxXXxx;;::::::::,,,,;;::,,,,::xxxxxx;;::;;;;::::xxXXxx;;xxXXxx;;xxXX;;::::;;XX@@@@&&@@&&&&XXXXXXxxXXXXXXXXXXXX
-@@@@@@@@@@@@&&&&XXXXXXxxxxXXXXXXXXxxxx;;::::::::,,..,,,,,,xxXXXXXXXXxx::::,,,,;;&&XX;;;;xxxx;;;;XXXX;;::::;;XX&&@@@@@@&&&&XXxxxxxxxxxxXXXXXX
-@@@@@@@@@@@@@@@@&&XXxxxxxxXXXXXXxx;;::,,::::::,,,,,,......;;&&&&XX&&&&;;::::;;xxxxxx;;::;;;;;;;;XX&&XX;;::::;;XXXX&&&&@@&&XXXXxxxxxxxxXXXXXX
-@@@@@@@@@@@@@@@@&&&&XXXXXXXXxxxx;;;;;;;;;;::::::,,,,,,,,,,..;;&&@@&&;;::,,::,,,,,,,,,,,,;;;;xxxxxxXX&&&&xx::;;XX&&&&&&&&&&&&xxXXxxxxxxXXXXXX
-@@@@@@@@@@@@@@@@@@&&XXxxxxxxXXxxxxxx;;::::::::::::::,,,,,,::::xxxx::,,,,,,,,,,::::::::::::::;;;;;;XX&&&&XX;;::;;&&@@&&&&&&&&XXxxXXXXxxxxxxXX
-@@@@@@@@@@@@@@@@&&XXxxxxXXXXxxXXXX;;::::::::::::::::::::::;;xxXXxx;;::::::::::::,,,,::::::::::::;;XX@@@@&&xx;;;;;;xx&&@@@@XXXXXXXXXXxxXXXXXX
-@@@@@@@@@@@@@@&&XXXX&&XX;;xxxxxxxx;;::::::::::::::::;;;;xxxxXX&&XXxx;;::::::::::::::::;;::::::::;;xx&&@@@@XXxxXXXXxxXX&&&&XXxxxxXXXXXXXXXXXX
-@@@@@@@@@@@@@@&&&&&&&&xxxxxxxxxx;;;;;;;;::::::::::::::;;;;;;xxxxxxXXXXxx;;;;::;;;;;;;;;;;;::::::::;;XX&&@@&&XXxxxxXX&&&&XXXXxx;;xxxxXX&&&&XX
-@@@@@@@@@@@@@@@@@@@@&&XXxxxxxxxxxxxx;;;;::::::::::::::::::::::::;;;;;;xxxxxx;;xx;;;;;;;;::::;;::::::;;XX&&&&&&&&XXxxXX&&&&XXxxxx;;;;xxXX&&XX
-@@@@@@@@@@@@@@@@@@@@&&xxxxxxxxxxxxxx;;;;::::::::::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx;;;;;;;;::::::::;;;;xxXXXX&&&&XXxxXXXXXXXXxxxxxxxxxxXXXXXX
-@@@@@@@@@@@@@@@@@@@@xxxxxxxxxxxxxxxx;;::::::::::::;;;;;;;;;;;;;;xxxxxxxxxxxxxxxx;;;;;;::::;;::::::;;;;xxXXXXXX&&XXXXxxxxxxXXXXXXxxxxxxXXXXXX
-@@@@@@@@@@@@@@@@@@XX;;xxxxxxxxxxXXxx;;;;;;::::::;;::;;;;;;;;xxxxxxxxxxXXxxxxxx;;;;;;::::::::::::::::;;xxxxXXXXXXxxxxXXXXxxxxXXXXxxxxXXXXXXXX
-@@@@@@@@@@@@@@&&XXxxxxxxxxxxXXXXxxxxxxxx;;;;;;;;;;;;xx;;;;xxxxxxxxxxxxxxxxxxxx;;;;;;::::::::;;::;;;;;;XXXXXX&&XXxxxxXXXXxxxxXXXXXXXXXXXXXXXX
-@@@@@@@@@@@@&&XXXXXXXXxxxxXXXXxxxxxxXXxxxxxxxx;;;;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx;;;;;;;;::::;;;;::;;xxXXXXXX&&XXXXXXXXXXxxxxxxXXxxXXXXXXXX&&
-@@@@@@@@@@@@XXXX&&&&XXxxxxxxXXXXXXXXxxXXXXxxxx;;xxxxxxxxxxxxxxxxxxxx;;xxxxxxxxxx;;xx;;xx;;;;;;;;;;;;xxxxXXxxXX&&XXXXxxXXXXxxxxxxXXXXXXXXXX&&
-@@@@@@@@@@@@&&&&&&XXXXxx;;xxXXXXXXXXXX&&xxxxxxxxXXxxxxxxxxxxxxxxxxxx;;xxxxxxxxxx;;xxxxxxxx;;;;xxxx;;xxXXXXxxXX&&XXxxXXXXXXxxXXXXxxxxXXXXXXXX
-@@@@@@@@@@@@@@&&&&&&xx;;xxxxXX&&&&&&&&XXxxXXXXXXxxxxxxxxxxxxxxxxxxxx;;xxxxxxxxxxxxXXxxxxxxxxxxxxxxxx;;xxXXXXxxXX&&XXXXxxxxxxXXXXXXxxxxXXXXXX
-@@@@@@@@@@@@@@&&&&xx;;;;xxxxXX&&XX&&XXxxXXXXXXxxxxxxXXxxxxxxxxxxxxxx;;;;xxxxxxxxxxxxXXxxXXXXxxxxxxxx;;xxxxXXXXxx&&&&XXXXxxxxxxXXXXxxxxXXXXXX
-@@@@@@@@@@@@@@@@XXxxxxxxxxxxXXXXXX&&XXXXXXXXXXXXxxxxXXxxxxxxxxxxxxxxxx;;xxxxxxxxXXXXXXxx&&XXxxxxxxxxxxxxxxXX&&XXXX&&&&XXxxxxxxXX&&&&XXXXXXXX
-@@@@@@@@@@@@@@XXxxXXXX;;;;xxXXXX&&&&XXXX&&XXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXXxxXXXX&&&&XXXXxxXXXXXXXXXX&&&&XX&&&&XXxxxxXXxxXXXXXXXXXX&&
+# An ASCII-Manul
 
+```
+,,,,::::::::;;;;;;;;::::,,,,,,::;;::::;;::,,&&&&xxXXXX::::XXxx::::xx&&xx;;::;;;;xxxx;;;;;;;;;;;;;;::
+::::::::::::;;::;;;;::,,,,,,..,,::::;;::::::@@XXxxXXXX;;;;::,,::;;;;,,::::::::::;;;;;;;;;;::::;;::,,
+;;::::::::::::;;;;::,,::xxxx..,,,,,,::::;;xxXX::xx;;;;xxxx::::::::,,,,::;;;;;;::;;;;;;;;::::;;;;;;xx
+..,,,,,,::,,::;;::,,xxXX;;xx;;..,,::::::::;;;;::;;;;::,,::::,,,,,,..xxxxXXXXXX;;::;;xxxx;;::::::::::
+,,,,,,,,,,,,::;;::::;;::,,,,::,,,,::..,,..,,::;;;;::;;,,,,,,..,,,,,,::::::::;;::,,::;;;;;;;;::,,,,,,
+,,,,,,::,,::::;;;;::::,,,,,,,,,,,,::,,,,,,,,::xx&&;;;;::::,,,,;;::::;;::,,,,,,,,::;;;;;;xxxx;;::,,,,
+::;;::::,,::::;;;;::,,::xxXXXXXX;;::;;xx;;;;;;xx&&xx;;;;xxxx::;;xx&&&&XXXXxx::::;;XXxx;;;;xx;;::::,,
+;;::::,,::;;xx;;::::::&&####&&XX&&XX;;&&&&xx;;xx&&XXxx&&@@XX;;XX@@@@&&&&@@##XX;;;;XX;;;;;;;;xx;;::::
+,,..,,::::;;;;;;xxxxXX@@XXXX;;XX##@@xx;;XXXXxxXX@@xxXX&&XX;;XX##&&XX@@XXxx@@##xxxxxxxx;;;;xxXXxx;;::
+,,,,,,::;;xxxxxxxxXXXXXXxx;;::&&##XX&&xx;;XX&&&&&&XXXXXX::xx##@@;;xx##XX;;&&&&XXXXxxxxxx;;;;xxxx;;;;
+,,,,,,::xxxx;;xxxxXX::;;XXxx::::;;xx@@&&::;;XXXX&&XXxx;;::XX##@@;;::::::::&&;;;;XX&&XX;;xxXXxxXXxxxx
+,,,,::::;;::;;;;xx;;,,..;;&&xxxxXX&&##@@::;;xxxxXXxxxx::::&&####&&xx;;xxXX::..::::;;&&XX;;;;xxxxXXxx
+::,,,,::;;;;;;XXxx::,,,,....;;XX&&XXxxxx;;;;;;;;xx;;::::::xxxxXX&&&&xx::,,,,;;;;::::;;XXxx;;xx;;xxxx
+::::::xxxxxxXXxx,,,,::::;;::..  ......;;;;;;,,,,::,,,,::;;;;,,......,,::::::::::..,,::xx&&XXXXXXXXxx
+::::::;;;;XXXX::,,....,,,,::;;;;::..,,;;;;::::,,::,,,,::xx;;,,..,,::;;::::,,,,,,,,::::::;;XX@@@@@@&&
+,,,,::xxxx;;,,..,,,,::::::;;xx&&xx,,;;xx;;::::::::::,,::;;xx;;,,xx&&xxxx;;;;;;::,,,,,,,,,,;;;;XX&&&&
+,,,,;;;;;;,,....,,;;&&&&xx;;;;;;::::xx;;::::::::::::::::;;xx;;;;::xx&&&&XX@@@@xx;;,,,,..,,,,::::;;;;
+::;;;;;;::,,,,,,,,;;xxxxXXXX;;::::;;xxXX::::;;xxxx;;::;;xxXX;;;;;;::xxXX&&XXxxXXxx;;,,,,....,,,,..,,
+;;;;;;;;,,,,,,,,::xxxx::,,::::::;;::;;;;::;;::;;;;::::::::::::;;xx::::;;;;xxXXxx;;::,,,,,,,,,,,,,,..
+;;xx;;,,....,,::;;;;;;xx::,,::;;xx::,,,,::;;::;;;;::;;;;,,,,,,::XXxx::,,,,::;;::::;;xx;;xxxx::::::,,
+;;::,,....,,::xxXX;;::::::,,::xxxx,,,,::;;xx;;;;;;XXxxxx;;,,,,,,xxXXxx::::::;;;;xxxxXXXX&&&&XXxx;;::
+;;;;;;;;;;xxXXXX;;;;;;::::::xx;;::;;;;;;XX####XX&&####&&;;;;::;;::;;XXxx::;;;;;;;;;;;;;;;;XX&&@@&&XX
+;;xx;;;;;;XXXXxx;;;;;;::::::::::::::::::::XX@@&&&&@@xx,,,,::::,,,,,,..,,::::::::::::::::::;;XXXXXXXX
+xxxx,,,,::xxxx;;;;::::::,,,,,,::::,,::,,,,::XX@@@@xx::::::,,,,,,::::::,,,,::::::::::::::::::;;xxXXxx
+XX;;,,::xxxx;;::::::::,,,,::::;;;;;;;;;;::::;;xx;;;;;;::;;::::;;::,,::,,,,,,::,,,,::::;;;;::::::::;;
+;;::::;;;;::::::;;;;::::,,::::::::::;;xx;;;;;;;;;;xx::;;;;;;;;::::::::,,,,::;;::::::::::::;;::::::;;
+::,,,,;;;;;;;;xx;;::::::::::::::;;;;;;;;;;;;XX&&@@&&XXxx;;;;;;;;::::::,,::;;;;;;;;;;::::::::::;;;;;;
+,,::;;xxxxXXXX;;::;;;;;;xx;;;;::;;xxxxxxXX@@########@@@@XX;;;;xxxx;;;;::::::;;::::;;;;;;::::,,,,::::
+::;;;;XX&&XX::::xx;;xxXXxx;;;;xxxxxxxx&&@@@@&&XXXXXX&&@@@@&&xxxxxx;;;;;;;;;;::::::::::::::,,,,,,,,::
+;;;;xxXXxx::xxxxxxxxxx;;;;xxxxxx;;xxxx&&&&XXXXXXxxxxxxxxXX&&XXxxxxxx;;;;;;;;;;::::,,,,,,,,,,,,,,::;;
+xx;;xx;;;;&&XXxxxx;;;;;;;;;;;;;;;;;;;;xx;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::::,,,,,,,,,,,,,,,,::
+;;;;;;xx&&XXxxxx;;;;;;xxxx;;;;::;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::::;;;;;;;;;;::::::::,,,,,,,,,,::::::
 ```

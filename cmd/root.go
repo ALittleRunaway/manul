@@ -18,9 +18,9 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/ALittleRunaway/manul/converter"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"manul/converter"
 	"os"
 )
 
